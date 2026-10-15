@@ -1,0 +1,79 @@
+{
+  "pass_rate": 1.0,
+  "passed": 12,
+  "total": 12,
+  "cases": [
+    {
+      "id": "e01_knowledge",
+      "desc": "概念问题走知识检索并给出参考来源",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "e02_gene_drugs",
+      "desc": "基因靶向药查询",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "e03_gene_alias",
+      "desc": "别名解析：HER2 -> ERBB2",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "e04_gc",
+      "desc": "序列 GC 含量计算",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "e05_orf",
+      "desc": "ORF 查找",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "e06_self_correct_gene",
+      "desc": "基因名拼错 -> 工具报错给出建议 -> 模型按建议重试成功",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "e07_self_correct_seq",
+      "desc": "序列夹带 FASTA 标题和数字 -> 参数校验失败 -> 清洗后重试",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "e08_coref_gene",
+      "desc": "多轮：'它'指代上一轮的基因",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "e09_coref_sequence",
+      "desc": "多轮：'这条序列'指代上一轮的序列",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "e10_coref_topic",
+      "desc": "多轮：'这个方法'指代上一轮检索到的主题",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "e11_unknown_gene",
+      "desc": "知识表外的基因：多次失败后应如实说明，不能编造",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "e12_no_drug",
+      "desc": "没有直接靶向药的基因",
+      "passed": true,
+      "failures": []
+    }
+  ]
+}

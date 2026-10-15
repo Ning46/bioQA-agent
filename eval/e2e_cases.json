@@ -1,0 +1,89 @@
+[
+  {
+    "id": "e01_knowledge",
+    "desc": "概念问题走知识检索并给出参考来源",
+    "turns": [
+      {"user": "GWAS 的显著性阈值是多少", "tools": ["knowledge_search"], "answer_contains": ["5×10^-8", "参考"]}
+    ]
+  },
+  {
+    "id": "e02_gene_drugs",
+    "desc": "基因靶向药查询",
+    "turns": [
+      {"user": "EGFR有哪些靶向药", "tools": ["gene_lookup"], "answer_contains": ["奥希替尼", "T790M"]}
+    ]
+  },
+  {
+    "id": "e03_gene_alias",
+    "desc": "别名解析：HER2 -> ERBB2",
+    "turns": [
+      {"user": "HER2的靶向药有哪些", "tools": ["gene_lookup"], "answer_contains": ["ERBB2", "曲妥珠单抗"]}
+    ]
+  },
+  {
+    "id": "e04_gc",
+    "desc": "序列 GC 含量计算",
+    "turns": [
+      {"user": "帮我算一下 ATGCGCGATTAGCCGATAA 的GC含量", "tools": ["sequence_analysis"], "answer_contains": ["0.4737"]}
+    ]
+  },
+  {
+    "id": "e05_orf",
+    "desc": "ORF 查找",
+    "turns": [
+      {"user": "找一下这段序列的ORF：CCATGGCTAAAGGTGAACTGTTTTAACC", "tools": ["sequence_analysis"], "answer_contains": ["n_orfs"]}
+    ]
+  },
+  {
+    "id": "e06_self_correct_gene",
+    "desc": "基因名拼错 -> 工具报错给出建议 -> 模型按建议重试成功",
+    "turns": [
+      {"user": "EGRF的靶向药有哪些", "tools": ["gene_lookup", "gene_lookup"], "n_errors": 1, "answer_contains": ["EGFR", "奥希替尼"]}
+    ]
+  },
+  {
+    "id": "e07_self_correct_seq",
+    "desc": "序列夹带 FASTA 标题和数字 -> 参数校验失败 -> 清洗后重试",
+    "turns": [
+      {"user": ">seq1 ATGAAACCC1GGGTTTTAG 翻译成蛋白", "tools": ["sequence_analysis", "sequence_analysis"], "n_errors": 1, "answer_contains": ["MKPGF"]}
+    ]
+  },
+  {
+    "id": "e08_coref_gene",
+    "desc": "多轮：'它'指代上一轮的基因",
+    "turns": [
+      {"user": "BRCA1有什么靶向药", "tools": ["gene_lookup"], "answer_contains": ["奥拉帕利"]},
+      {"user": "它的功能是什么", "tools": ["gene_lookup"], "resolved_contains": "BRCA1", "answer_contains": ["同源重组"]}
+    ]
+  },
+  {
+    "id": "e09_coref_sequence",
+    "desc": "多轮：'这条序列'指代上一轮的序列",
+    "turns": [
+      {"user": "ATGCGCGATTAGCCGATAA 的GC含量是多少", "tools": ["sequence_analysis"], "answer_contains": ["gc_content"]},
+      {"user": "这条序列的反向互补是什么", "tools": ["sequence_analysis"], "resolved_contains": "ATGCGCGATTAGCCGATAA", "answer_contains": ["TTATCGGCTAATCGCGCAT"]}
+    ]
+  },
+  {
+    "id": "e10_coref_topic",
+    "desc": "多轮：'这个方法'指代上一轮检索到的主题",
+    "turns": [
+      {"user": "GWAS 是什么", "tools": ["knowledge_search"], "answer_contains": ["GWAS"]},
+      {"user": "这个方法有什么局限", "tools": ["knowledge_search"], "resolved_contains": "GWAS", "answer_contains": ["假阳性"]}
+    ]
+  },
+  {
+    "id": "e11_unknown_gene",
+    "desc": "知识表外的基因：多次失败后应如实说明，不能编造",
+    "turns": [
+      {"user": "ZZZ9X 基因有什么靶向药", "tools": ["gene_lookup"], "n_errors": 1, "answer_contains": ["未找到"]}
+    ]
+  },
+  {
+    "id": "e12_no_drug",
+    "desc": "没有直接靶向药的基因",
+    "turns": [
+      {"user": "MYCN 有靶向药吗", "tools": ["gene_lookup"], "answer_contains": ["没有"]}
+    ]
+  }
+]
