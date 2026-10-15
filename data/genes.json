@@ -1,0 +1,122 @@
+{
+  "_comment": "精简的基因-靶向药知识表，供 gene_lookup 工具使用。仅作演示，不构成用药建议。",
+  "EGFR": {
+    "aliases": ["ERBB1", "HER1", "表皮生长因子受体"],
+    "name": "Epidermal growth factor receptor",
+    "function": "受体酪氨酸激酶；激活突变（19外显子缺失、L858R）驱动非小细胞肺癌",
+    "drugs": [
+      {"name": "gefitinib 吉非替尼", "mechanism": "一代可逆 EGFR-TKI", "status": "approved"},
+      {"name": "erlotinib 厄洛替尼", "mechanism": "一代可逆 EGFR-TKI", "status": "approved"},
+      {"name": "afatinib 阿法替尼", "mechanism": "二代不可逆泛 HER 抑制剂", "status": "approved"},
+      {"name": "osimertinib 奥希替尼", "mechanism": "三代 EGFR-TKI，覆盖 T790M 耐药突变", "status": "approved"}
+    ]
+  },
+  "ERBB2": {
+    "aliases": ["HER2", "NEU"],
+    "name": "Erb-b2 receptor tyrosine kinase 2",
+    "function": "受体酪氨酸激酶；扩增/过表达见于乳腺癌、胃癌",
+    "drugs": [
+      {"name": "trastuzumab 曲妥珠单抗", "mechanism": "抗 HER2 单克隆抗体", "status": "approved"},
+      {"name": "pertuzumab 帕妥珠单抗", "mechanism": "抗 HER2 二聚化单抗", "status": "approved"},
+      {"name": "trastuzumab deruxtecan", "mechanism": "抗体偶联药物（ADC）", "status": "approved"},
+      {"name": "tucatinib 图卡替尼", "mechanism": "HER2 选择性 TKI", "status": "approved"}
+    ]
+  },
+  "KRAS": {
+    "aliases": ["KRAS2"],
+    "name": "KRAS proto-oncogene, GTPase",
+    "function": "小 GTP 酶，RAS-MAPK 通路关键节点；G12C/G12D 等突变常见于胰腺癌、结直肠癌、肺癌",
+    "drugs": [
+      {"name": "sotorasib 索托拉西布", "mechanism": "KRAS G12C 共价抑制剂", "status": "approved"},
+      {"name": "adagrasib 阿达格拉西布", "mechanism": "KRAS G12C 共价抑制剂", "status": "approved"}
+    ]
+  },
+  "BRAF": {
+    "aliases": ["B-RAF"],
+    "name": "B-Raf proto-oncogene, serine/threonine kinase",
+    "function": "MAPK 通路丝氨酸/苏氨酸激酶；V600E 突变常见于黑色素瘤",
+    "drugs": [
+      {"name": "vemurafenib 维莫非尼", "mechanism": "BRAF V600 抑制剂", "status": "approved"},
+      {"name": "dabrafenib 达拉非尼", "mechanism": "BRAF V600 抑制剂（常联用 MEK 抑制剂曲美替尼）", "status": "approved"},
+      {"name": "encorafenib 康奈非尼", "mechanism": "BRAF V600 抑制剂", "status": "approved"}
+    ]
+  },
+  "ALK": {
+    "aliases": ["CD246"],
+    "name": "ALK receptor tyrosine kinase",
+    "function": "受体酪氨酸激酶；EML4-ALK 融合见于肺癌，激活突变见于神经母细胞瘤",
+    "drugs": [
+      {"name": "crizotinib 克唑替尼", "mechanism": "一代 ALK/ROS1/MET 抑制剂", "status": "approved"},
+      {"name": "alectinib 阿来替尼", "mechanism": "二代 ALK 抑制剂", "status": "approved"},
+      {"name": "lorlatinib 劳拉替尼", "mechanism": "三代 ALK 抑制剂，可穿透血脑屏障", "status": "approved"}
+    ]
+  },
+  "ABL1": {
+    "aliases": ["BCR-ABL", "BCR-ABL1", "ABL"],
+    "name": "ABL proto-oncogene 1, non-receptor tyrosine kinase",
+    "function": "非受体酪氨酸激酶；BCR-ABL 融合（费城染色体）驱动慢性髓系白血病",
+    "drugs": [
+      {"name": "imatinib 伊马替尼", "mechanism": "BCR-ABL 抑制剂", "status": "approved"},
+      {"name": "dasatinib 达沙替尼", "mechanism": "二代 BCR-ABL 抑制剂", "status": "approved"},
+      {"name": "ponatinib 帕纳替尼", "mechanism": "三代抑制剂，覆盖 T315I", "status": "approved"}
+    ]
+  },
+  "BRCA1": {
+    "aliases": ["乳腺癌易感基因1"],
+    "name": "BRCA1 DNA repair associated",
+    "function": "抑癌基因，参与同源重组修复；胚系突变增加乳腺癌、卵巢癌风险",
+    "drugs": [
+      {"name": "olaparib 奥拉帕利", "mechanism": "PARP 抑制剂，合成致死（不直接靶向 BRCA1）", "status": "approved"},
+      {"name": "niraparib 尼拉帕利", "mechanism": "PARP 抑制剂", "status": "approved"},
+      {"name": "talazoparib 他拉唑帕利", "mechanism": "PARP 抑制剂", "status": "approved"}
+    ]
+  },
+  "BRCA2": {
+    "aliases": ["FANCD1", "乳腺癌易感基因2"],
+    "name": "BRCA2 DNA repair associated",
+    "function": "抑癌基因，参与同源重组修复（招募 RAD51）",
+    "drugs": [
+      {"name": "olaparib 奥拉帕利", "mechanism": "PARP 抑制剂，合成致死", "status": "approved"},
+      {"name": "rucaparib 卢卡帕利", "mechanism": "PARP 抑制剂", "status": "approved"}
+    ]
+  },
+  "TP53": {
+    "aliases": ["P53", "基因组守护者"],
+    "name": "Tumor protein p53",
+    "function": "转录因子与抑癌基因，调控细胞周期阻滞、DNA 修复和凋亡；人类肿瘤中突变最频繁",
+    "drugs": [
+      {"name": "eprenetapopt (APR-246)", "mechanism": "试图恢复突变 p53 野生型构象", "status": "investigational"}
+    ]
+  },
+  "PIK3CA": {
+    "aliases": ["PI3K", "p110α"],
+    "name": "Phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit alpha",
+    "function": "PI3K-AKT-mTOR 通路激酶；热点突变 H1047R、E545K 常见于乳腺癌",
+    "drugs": [
+      {"name": "alpelisib 阿培利司", "mechanism": "PI3Kα 选择性抑制剂", "status": "approved"}
+    ]
+  },
+  "PDCD1": {
+    "aliases": ["PD-1", "PD1", "CD279"],
+    "name": "Programmed cell death 1",
+    "function": "T 细胞免疫检查点受体，与 PD-L1 结合抑制 T 细胞活性",
+    "drugs": [
+      {"name": "pembrolizumab 帕博利珠单抗", "mechanism": "抗 PD-1 单抗", "status": "approved"},
+      {"name": "nivolumab 纳武利尤单抗", "mechanism": "抗 PD-1 单抗", "status": "approved"}
+    ]
+  },
+  "MYCN": {
+    "aliases": ["N-MYC"],
+    "name": "MYCN proto-oncogene, bHLH transcription factor",
+    "function": "转录因子；扩增是神经母细胞瘤的高危标志",
+    "drugs": []
+  },
+  "ATR": {
+    "aliases": ["FRP1"],
+    "name": "ATR serine/threonine kinase",
+    "function": "DNA 损伤应答（DDR）激酶，响应复制压力",
+    "drugs": [
+      {"name": "ceralasertib", "mechanism": "ATR 抑制剂", "status": "investigational"}
+    ]
+  }
+}
